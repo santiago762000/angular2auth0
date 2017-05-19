@@ -1,3 +1,8 @@
 <h1>
   {{title}}
+  <button class="btn btn-primary btn-margin" [routerLink]="['']">Home</button>
+  <button class="btn btn-primary btn-margin" [routerLink]="['login']" *ngIf="!auth.isAuthenticated()">Log In</button>
+  <button class="btn btn-primary btn-margin" (click)="auth.logout()" *ngIf="auth.isAuthenticated()">Log Out</button>
+
+  <router-outlet></router-outlet>
 </h1>

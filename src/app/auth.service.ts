@@ -32,7 +32,7 @@ export class AuthService {
     });
   }
 
-  public login(username: string, password: string): void {
+  /*public login(username: string, password: string): void {
     this.auth0.redirect.loginWithCredentials({
       connection: 'Username-Password-Authentication',
       username,
@@ -40,6 +40,10 @@ export class AuthService {
     }, err => {
       if (err) return alert(err.description);
     });
+  }*/
+
+   public login(): void {
+    this.auth0.authorize();
   }
 
   public isAuthenticated(): boolean {
